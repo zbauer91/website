@@ -8,22 +8,24 @@
 import { Prop, Vue } from "vue-property-decorator";
 import Component from "vue-class-component";
 
-@Component({})
-export default class HeaderButton extends Vue {
-  @Prop() action: string = "";
-  @Prop() text: string = "";
-  @Prop() icon: string = "";
-}
+@Component({
+  props: {
+    action: String,
+    text: String,
+    icon: String
+  }
+})
+export default class HeaderButton extends Vue {}
 </script>
 
 <style lang="css" scoped>
 .button {
   border-radius: 5px;
-  border-color: brown;
-  height: 15px;
-  width: 30px;
+  border: none;
+  height: 40px;
+  width: 150px;
   color: whitesmoke;
-  background-color: grey;
+  background-color: darkgray;
   margin-left: 5px;
 }
 </style>

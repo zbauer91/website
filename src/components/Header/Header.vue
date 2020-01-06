@@ -1,17 +1,20 @@
 <template>
   <div class="header">
-    <div class="logo">LOGO GOES HERE</div>
+    <div class="logo">
+      <span class="logo-piece">LOGOS</span>
+      <span class="logo-piece">GOES</span>
+      <span class="logo-piece">HERE</span>
+    </div>
     <div class="spacer"></div>
     <div class="fullscreen">
       <HeaderButton
-        class="buttons"
         v-for="(item, index) in buttonList"
         :key="index"
       ></HeaderButton>
     </div>
     <div class="mobile">
       <button
-        class="mobile__dropdown mterial-icons"
+        class="mobile__dropdown material-icons"
         @click="toggleMenu"
         v-if="menuOpen"
       >
@@ -26,7 +29,7 @@
 </template>
 
 <script lang="ts">
-import { Prop, Vue } from "vue-property-decorator";
+import { Vue } from "vue-property-decorator";
 import Component from "vue-class-component";
 import HeaderButton from "./HeaderButton.vue";
 import MobileMenuItem from "./MobileMenuItem.vue";
@@ -39,17 +42,30 @@ import { buttonList } from "@/assets/config.ts";
   }
 })
 export default class Header extends Vue {
-  toggleMenu() {}
+  menuOpen: boolean = false;
+  buttonList = buttonList;
+  toggleMenu() {
+    this.menuOpen = !this.menuOpen;
+  }
 }
 </script>
 
 <style lang="css" scoped>
+.logo {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 20px;
+}
+
 .header {
   display: flex;
   flex-flow: row nowrap;
   position: absolute;
   top: 0;
   left: 0;
+  right: 0px;
   height: 50px;
   border-radius: 0 0 15px 15px;
 }
@@ -59,6 +75,7 @@ export default class Header extends Vue {
 }
 
 .mobile {
+  border: 1px solid rebeccapurple;
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
@@ -66,6 +83,7 @@ export default class Header extends Vue {
 }
 
 .spacer {
+  border: 1px solid red;
   flex-grow: 10;
 }
 
@@ -79,6 +97,8 @@ export default class Header extends Vue {
   }
 
   .fullscreen {
+    border: 1px solid rebeccapurple;
+    width: 20vw;
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
