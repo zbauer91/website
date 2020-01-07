@@ -1,21 +1,17 @@
 <template>
   <li class="mobile-menu-item">
-    <a class="button material-icons" :class="icon" :href="action">
-      {{ text }}
-    </a>
+    <a class="button material-icons" :class="icon" :href="action">{{ text }}</a>
   </li>
 </template>
 
-<script lang="ts">
-import { Prop, Vue } from "vue-property-decorator";
-import Component from "vue-class-component";
-
-@Component({})
-export default class MobileMenuItem extends Vue {
-  @Prop() action: string = "";
-  @Prop() text: string = "";
-  @Prop() icon: string = "";
-}
+<script>
+export default {
+  props: {
+    action: String,
+    text: String,
+    icon: String
+  }
+};
 </script>
 
 <style lang="css" scoped>

@@ -1,31 +1,36 @@
 <template>
-  <a class="button material-icons" :class="icon" :href="action">
+  <a class="button font" :href="action">
+    <i class="material-icons font">{{ icon }}</i>
     {{ text }}
   </a>
 </template>
 
-<script lang="ts">
-import { Prop, Vue } from "vue-property-decorator";
-import Component from "vue-class-component";
-
-@Component({
+<script>
+export default {
   props: {
     action: String,
     text: String,
     icon: String
   }
-})
-export default class HeaderButton extends Vue {}
+};
 </script>
 
 <style lang="css" scoped>
 .button {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
   border-radius: 5px;
   border: none;
   height: 40px;
-  width: 150px;
+  width: 120px;
   color: whitesmoke;
   background-color: darkgray;
+  text-decoration: none;
   margin-left: 5px;
+}
+.font {
+  font-size: 1rem;
 }
 </style>

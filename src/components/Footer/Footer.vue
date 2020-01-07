@@ -6,17 +6,6 @@
   </div>
 </template>
 
-<script lang="ts">
-import { Prop, Vue } from "vue-property-decorator";
-import Component from "vue-class-component";
-import HeaderButton from "./HeaderButton.vue";
-import MobileMenuItem from "./MobileMenuItem.vue";
-import { buttonList } from "@/assets/config.ts";
-
-@Component({})
-export default class Footer extends Vue {}
-</script>
-
 <style lang="css" scoped>
 .footer {
   display: flex;

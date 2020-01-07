@@ -7,10 +7,13 @@
     </div>
     <div class="spacer"></div>
     <div class="fullscreen">
-      <HeaderButton
-        v-for="(item, index) in buttonList"
+      <header-button
+        v-for="(item, index) in buttons"
         :key="index"
-      ></HeaderButton>
+        :text="item.text"
+        :action="item.action"
+        :icon="item.icon"
+      ></header-button>
     </div>
     <div class="mobile">
       <button
@@ -20,34 +23,41 @@
       >
         <i>menu</i>
         <ul class="mobile__link-list">
-          <MobileMenuitem v-for="(item, index) in buttonList" :key="index">
-          </MobileMenuitem>
+          <mobile-menu-item
+            v-for="(item, index) in buttons"
+            :key="index"
+            :text="item.text"
+            :action="item.action"
+            :icon="item.icon"
+          ></mobile-menu-item>
         </ul>
       </button>
     </div>
   </div>
 </template>
 
-<script lang="ts">
-import { Vue } from "vue-property-decorator";
-import Component from "vue-class-component";
+<script>
 import HeaderButton from "./HeaderButton.vue";
 import MobileMenuItem from "./MobileMenuItem.vue";
 import { buttonList } from "@/assets/config.ts";
 
-@Component({
+export default {
+  data() {
+    return {
+      menuOpen: false,
+      buttons: buttonList
+    };
+  },
   components: {
-    HeaderButton,
-    MobileMenuItem
+    "mobile-menu-item": MobileMenuItem,
+    "header-button": HeaderButton
+  },
+  methods: {
+    toggleMenu() {
+      this.menuOpen = !this.menuOpen;
+    }
   }
-})
-export default class Header extends Vue {
-  menuOpen: boolean = false;
-  buttonList = buttonList;
-  toggleMenu() {
-    this.menuOpen = !this.menuOpen;
-  }
-}
+};
 </script>
 
 <style lang="css" scoped>
@@ -88,17 +98,18 @@ export default class Header extends Vue {
 }
 
 /* Larger screen sizes */
-@media only screen and (min-width: 420px) {
+@media only screen and (min-width: 750px) {
   .header {
     height: 100px;
   }
+
   .mobile {
     display: none;
   }
 
   .fullscreen {
     border: 1px solid rebeccapurple;
-    width: 20vw;
+    width: 40vw;
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;

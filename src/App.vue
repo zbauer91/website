@@ -4,14 +4,18 @@
   </div>
 </template>
 
-<script lang="ts">
+<script>
 import { Component, Vue } from "vue-property-decorator";
 import Header from "./components/Header/Header.vue";
 
-@Component({
-  components: { Header }
-})
-export default class App extends Vue {}
+export default {
+  data() {
+    return {};
+  },
+  mounted() {
+    console.log("mounted app");
+  }
+};
 </script>
 
 <style>

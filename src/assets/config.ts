@@ -1,11 +1,11 @@
 export const buttonList = [
   {
-    text: "Email Me!",
+    text: "Email",
     action: "mailto:zbauer91@gmail.com",
-    icon: "mail-outline"
+    icon: "mail_outline"
   },
   {
-    text: "Call Me!",
+    text: "Phone",
     action: "tel:16145193442",
     icon: "phone_android"
   },
