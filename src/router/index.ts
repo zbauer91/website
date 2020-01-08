@@ -9,16 +9,9 @@ const routes = [
     path: "/",
     name: "home",
     component: Home
-  },
-  {
-    path: "/scripts",
-    name: "scripts",
-    component: () => import("../views/Scripts.vue")
   }
 ];
 
-const router = new VueRouter({
-  routes
-});
+const router = new VueRouter({ routes });
 
 export default router;

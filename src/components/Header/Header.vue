@@ -1,26 +1,36 @@
 <template>
-  <div class="header">
-    <ul class="header-list">
-      <header-button
-        v-for="(item, index) in buttons"
-        :key="index"
-        :text="item.text"
-        :action="item.action"
-        :icon="item.icon"
-      ></header-button>
-    </ul>
-  </div>
+  <ul>
+    <header-button
+      v-for="(item, index) in buttons"
+      :key="index"
+      :text="item.text"
+      :action="item.action"
+      :icon="item.icon"
+    ></header-button>
+  </ul>
 </template>
 
 <script>
 import HeaderButton from "./HeaderButton.vue";
-import { buttonList } from "@/assets/config.ts";
 
 export default {
   data() {
     return {
       menuOpen: false,
-      buttons: buttonList
+      buttons: [
+        {
+          text: "Email",
+          action: "mailto:zbauer91@gmail.com"
+        },
+        {
+          text: "Github",
+          action: "https://www.github.com/zbauer91"
+        },
+        {
+          text: "LinkedIn",
+          action: "https://www.linkedin.com/in/rileybauerdev"
+        }
+      ]
     };
   },
   components: {
@@ -36,29 +46,17 @@ export default {
 
 <style lang="css" scoped>
 ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: rgba(50, 50, 50, 0.7);
-}
-
-.header {
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   height: 50px;
   width: 100vw;
-}
-
-/* Larger screen sizes */
-@media only screen and (min-width: 750px) {
-  .header-list {
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: center;
-    align-items: center;
-  }
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  float: left;
+  background-color: rgba(50, 50, 50, 0.7);
 }
 </style>

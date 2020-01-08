@@ -25,14 +25,13 @@ export default {
 .footer {
   position: absolute;
   bottom: 0;
-  left: 0;
-  right: 0px;
-  height: 50px;
-  border-radius: 15px 15px 0 0;
+  right: 0;
+  width: 100vw;
+  float: right;
 }
 
-li {
+ul {
   float: right;
-  display: inline;
+  margin-right: 10px;
 }
 </style>

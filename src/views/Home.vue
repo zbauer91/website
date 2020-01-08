@@ -1,7 +1,13 @@
 <template>
   <div class="home">
     <app-header></app-header>
-    <div class="content">Hello World</div>
+    <div class="content">
+      <span class="firstname">Riley Bauer</span>
+      <span class="about">
+        I'm a <span class="exciting">software developer</span>. I code for fun
+        and totally know about design and stuff
+      </span>
+    </div>
     <app-footer></app-footer>
   </div>
 </template>
@@ -19,32 +25,47 @@ export default {
 </script>
 
 <style scoped>
-.home {
+.content {
+  color: white;
   display: flex;
   flex-flow: column nowrap;
+  font-size: 10vw;
+  font-family: "Amatic SC", cursive;
   justify-content: center;
   align-items: center;
-  bottom: 50px;
-  border: 1px solid red;
 }
 
-app-header {
-  border: 1px solid blue;
+.firstname {
+  margin-right: 5vw;
+  margin-bottom: 3vh;
+  transform: rotate(-10deg);
 }
 
-app-footer {
-  border: 1px solid orange;
+.about {
+  font-family: "Kalam", cursive;
+  font-size: 2vw;
+  transform: rotate(0deg);
 }
 
-.content {
-  border: 1px solid white;
-  margin-top: 50px;
-  color: white;
+.exciting {
+  animation: colorchange 5s infinite;
 }
-/* Larger screen sizes */
-@media only screen and (min-width: 750px) {
-  .content {
-    margin-top: 100px;
+
+@keyframes colorchange {
+  0% {
+    color: red;
+  }
+  25% {
+    color: yellow;
+  }
+  50% {
+    color: blue;
+  }
+  75% {
+    color: green;
+  }
+  100% {
+    color: red;
   }
 }
 </style>
