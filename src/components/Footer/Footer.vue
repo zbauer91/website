@@ -1,12 +1,6 @@
 <template>
   <div class="footer">
-    <ul>
-      <li>
-        <a :href="bootstrap">
-          <i class="material-icons">memory</i>
-        </a>
-      </li>
-    </ul>
+    <h5>Copyright {{ date }}, Riley Bauer</h5>
   </div>
 </template>
 
@@ -14,8 +8,7 @@
 export default {
   data() {
     return {
-      bootstrap:
-        "https://gist.githubusercontent.com/zbauer91/cac091c2fa56855cddc6cad9c221c77f/raw/3666942023b38df0e8fbf3f396892fe07c078c65/bootstrap.sh"
+      date: new Date().getFullYear()
     };
   }
 };

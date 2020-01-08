@@ -1,9 +1,7 @@
 <template>
   <li>
-    <a :href="action">
-      <i class="material-icons font">{{ icon }}</i>
-      {{ text }}
-    </a>
+    <router-link v-if="route" :to="action">{{ text }}</router-link>
+    <a v-else :href="action">{{ text }}</a>
   </li>
 </template>
 
@@ -12,7 +10,7 @@ export default {
   props: {
     action: String,
     text: String,
-    icon: String
+    route: Boolean
   }
 };
 </script>

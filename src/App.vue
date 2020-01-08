@@ -5,6 +5,16 @@
 </template>
 
 <style>
+@font-face {
+  font-family: "Amatic SC";
+  src: url("./assets/AmaticSC-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Kalam";
+  src: url("./assets/Kalam-Regular.ttf") format("truetype");
+}
+
 body {
   background-image: url("./assets/black.jpg");
   background-repeat: repeat;

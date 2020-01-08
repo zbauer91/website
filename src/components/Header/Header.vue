@@ -1,11 +1,22 @@
 <template>
   <ul>
     <header-button
-      v-for="(item, index) in buttons"
-      :key="index"
-      :text="item.text"
-      :action="item.action"
-      :icon="item.icon"
+      text="Email"
+      action="mailto:zbauer91@gmail.com"
+    ></header-button>
+    <header-button
+      text="Email"
+      action="https://www.github.com/zbauer91"
+    ></header-button>
+    <header-button
+      text="LinkedIn"
+      action="https://www.linkedin.com/in/rileybauerdev"
+    ></header-button>
+    <header-button
+      v-if="assets"
+      text="Assets"
+      action="/assets"
+      :route="true"
     ></header-button>
   </ul>
 </template>
@@ -17,20 +28,7 @@ export default {
   data() {
     return {
       menuOpen: false,
-      buttons: [
-        {
-          text: "Email",
-          action: "mailto:zbauer91@gmail.com"
-        },
-        {
-          text: "Github",
-          action: "https://www.github.com/zbauer91"
-        },
-        {
-          text: "LinkedIn",
-          action: "https://www.linkedin.com/in/rileybauerdev"
-        }
-      ]
+      assets: false
     };
   },
   components: {
@@ -39,7 +37,16 @@ export default {
   methods: {
     toggleMenu() {
       this.menuOpen = !this.menuOpen;
+    },
+    keyListener(e) {
+      if (e.key === "s" && e.ctrlKey && e.metaKey) {
+        e.preventDefault();
+        this.assets = !this.assets;
+      }
     }
+  },
+  mounted() {
+    document.addEventListener("keydown", this.keyListener.bind(this));
   }
 };
 </script>
