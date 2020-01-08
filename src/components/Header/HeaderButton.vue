@@ -1,6 +1,6 @@
 <template>
-  <li class="button">
-    <a class=" font" :href="action">
+  <li>
+    <a :href="action">
       <i class="material-icons font">{{ icon }}</i>
       {{ text }}
     </a>
@@ -18,20 +18,20 @@ export default {
 </script>
 
 <style lang="css" scoped>
-.button {
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: center;
-  align-items: center;
-  border-radius: 2px;
-  border: 1px solid grey;
-  height: 40px;
-  width: 120px;
-  color: whitesmoke;
-  text-decoration: none;
-  margin: 0 5px;
+li {
+  float: left;
 }
-.font {
-  font-size: 1rem;
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* Change the link color to #111 (black) on hover */
+li a:hover {
+  background-color: #111;
 }
 </style>

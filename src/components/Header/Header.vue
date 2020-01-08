@@ -14,7 +14,6 @@
 
 <script>
 import HeaderButton from "./HeaderButton.vue";
-import MobileMenuItem from "./MobileMenuItem.vue";
 import { buttonList } from "@/assets/config.ts";
 
 export default {
@@ -36,6 +35,14 @@ export default {
 </script>
 
 <style lang="css" scoped>
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
 .header {
   position: absolute;
   top: 0;
