@@ -40,7 +40,7 @@ ul {
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: #333;
+  background-color: rgba(50, 50, 50, 0.7);
 }
 
 .header {
@@ -50,7 +50,6 @@ ul {
   right: 0;
   height: 50px;
   width: 100vw;
-  background-color: rgba(100, 100, 100, 0.7);
 }
 
 /* Larger screen sizes */
