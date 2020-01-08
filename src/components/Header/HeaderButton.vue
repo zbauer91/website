@@ -1,8 +1,10 @@
 <template>
-  <a class="button font" :href="action">
-    <i class="material-icons font">{{ icon }}</i>
-    {{ text }}
-  </a>
+  <li class="button">
+    <a class=" font" :href="action">
+      <i class="material-icons font">{{ icon }}</i>
+      {{ text }}
+    </a>
+  </li>
 </template>
 
 <script>
@@ -21,14 +23,13 @@ export default {
   flex-flow: row nowrap;
   justify-content: center;
   align-items: center;
-  border-radius: 5px;
-  border: none;
+  border-radius: 2px;
+  border: 1px solid grey;
   height: 40px;
   width: 120px;
   color: whitesmoke;
-  background-color: darkgray;
   text-decoration: none;
-  margin-left: 5px;
+  margin: 0 5px;
 }
 .font {
   font-size: 1rem;

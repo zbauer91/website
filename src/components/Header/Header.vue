@@ -1,12 +1,6 @@
 <template>
   <div class="header">
-    <div class="logo">
-      <span class="logo-piece">LOGOS</span>
-      <span class="logo-piece">GOES</span>
-      <span class="logo-piece">HERE</span>
-    </div>
-    <div class="spacer"></div>
-    <div class="fullscreen">
+    <ul class="header-list">
       <header-button
         v-for="(item, index) in buttons"
         :key="index"
@@ -14,25 +8,7 @@
         :action="item.action"
         :icon="item.icon"
       ></header-button>
-    </div>
-    <div class="mobile">
-      <button
-        class="mobile__dropdown material-icons"
-        @click="toggleMenu"
-        v-if="menuOpen"
-      >
-        <i>menu</i>
-        <ul class="mobile__link-list">
-          <mobile-menu-item
-            v-for="(item, index) in buttons"
-            :key="index"
-            :text="item.text"
-            :action="item.action"
-            :icon="item.icon"
-          ></mobile-menu-item>
-        </ul>
-      </button>
-    </div>
+    </ul>
   </div>
 </template>
 
@@ -49,7 +25,6 @@ export default {
     };
   },
   components: {
-    "mobile-menu-item": MobileMenuItem,
     "header-button": HeaderButton
   },
   methods: {
@@ -61,58 +36,22 @@ export default {
 </script>
 
 <style lang="css" scoped>
-.logo {
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: center;
-  align-items: center;
-  padding: 10px 20px;
-}
-
 .header {
-  display: flex;
-  flex-flow: row nowrap;
   position: absolute;
   top: 0;
   left: 0;
-  right: 0px;
+  right: 0;
   height: 50px;
-  border-radius: 0 0 15px 15px;
-}
-
-.fullscreen {
-  display: none;
-}
-
-.mobile {
-  border: 1px solid rebeccapurple;
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.spacer {
-  border: 1px solid red;
-  flex-grow: 10;
+  width: 100vw;
+  background-color: rgba(100, 100, 100, 0.7);
 }
 
 /* Larger screen sizes */
 @media only screen and (min-width: 750px) {
-  .header {
-    height: 100px;
-  }
-
-  .mobile {
-    display: none;
-  }
-
-  .fullscreen {
-    border: 1px solid rebeccapurple;
-    width: 40vw;
+  .header-list {
     display: flex;
     flex-flow: row nowrap;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
   }
 }

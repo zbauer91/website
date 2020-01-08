@@ -19,6 +19,10 @@ export default {
 </script>
 
 <style>
+body {
+  background-image: url("./assets/black.jpg");
+  background-repeat: repeat;
+}
 #app {
   font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
