@@ -5,7 +5,7 @@
       action="mailto:zbauer91@gmail.com"
     ></header-button>
     <header-button
-      text="Email"
+      text="Github"
       action="https://www.github.com/zbauer91"
     ></header-button>
     <header-button
