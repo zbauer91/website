@@ -43,7 +43,7 @@ export default {
   },
   computed: {
     curlURL() {
-      return `curl -o ~/Desktop/bootstrap.sh ${this.bootstrap} ; sh ~/Desktop/bootstrap.sh`;
+      return `curl -L -o ~/Desktop/bootstrap.sh ${this.bootstrap} ; sh ~/Desktop/bootstrap.sh`;
     }
   },
   methods: {
