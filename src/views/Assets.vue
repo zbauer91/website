@@ -5,11 +5,8 @@
       <h2>Assets:</h2>
       <ul>
         <li>
-          <a :href="bootstrap">Bootstrap Script - Raw</a>
-        </li>
-        <li>
           <div v-clipboard:copy="curlURL" class="button" @click="copyText">
-            Bootstrap Script - Install Script
+            Bootstrap Script - Install
           </div>
         </li>
         <li>
@@ -32,8 +29,6 @@ import Footer from "../components/Footer/Footer.vue";
 export default {
   data() {
     return {
-      bootstrap:
-        "https://gist.githubusercontent.com/zbauer91/cac091c2fa56855cddc6cad9c221c77f/raw/bootstrap.sh",
       popup: false
     };
   },
@@ -43,7 +38,7 @@ export default {
   },
   computed: {
     curlURL() {
-      return `curl -L -o ~/Desktop/bootstrap.sh ${this.bootstrap} ; sh ~/Desktop/bootstrap.sh`;
+      return `cd ~/Desktop ; git clone https://github.com/zbauer91/dotfiles.git ; cd ./dotfiles ; sh bootstrap.sh`;
     }
   },
   methods: {
